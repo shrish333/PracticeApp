@@ -1,0 +1,5 @@
+trigger ContactPrimaryTrigger on Contact (before update) {
+    if(Trigger.isUpdate){
+        ContactPrimaryTriggerHandler.primaryCheck(Trigger.new, Trigger.old);
+    }
+}
