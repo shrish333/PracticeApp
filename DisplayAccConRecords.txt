@@ -1,14 +1,14 @@
 <apex:page StandardController="Contact" extensions="DispAccConRecords_Ctr" lightningStylesheets="true">
     <apex:form id="main">
         <apex:pageBlock >
-        <apex:pageMessages />
+            <apex:pageMessages />
             <apex:pageBlockSection title="Details">
                 <apex:pageBlockTable value="{!conList}" var="cn">
                     <apex:column headerValue="Contact Name">
-                    <apex:outputLink value="/{!cn.Id}" id="theLink1" target="_blank">{!cn.Name}</apex:outputLink>
+                        <apex:outputLink value="/{!cn.Id}" id="theLink1" target="_blank">{!cn.Name}</apex:outputLink>
                     </apex:column>
                     <apex:column headerValue="Account Name">
-                    <apex:outputLink value="/{!cn.Account.Id}" id="theLink2">{!cn.Account.Name}</apex:outputLink>
+                        <apex:outputLink value="/{!cn.Account.Id}" id="theLink2">{!cn.Account.Name}</apex:outputLink>
                     </apex:column>
                     <apex:column headerValue="Is Primary">
                         <apex:inputcheckbox id="chkbx" value="{!isChecked}">             
@@ -20,6 +20,7 @@
                 </apex:pageBlockTable>
             </apex:pageBlockSection>
             <apex:commandButton value="Save" action="{!save_click}"/>
+            <apex:commandButton value="Run Batch Job" action="{!null}"/>
         </apex:pageBlock>
     </apex:form>
 </apex:page>
